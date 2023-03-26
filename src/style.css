@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.padding{
+    padding-bottom: 250px;
+    color: black;
+    font-size: 2em;
+    text-decoration: bold;
+}
+
+header{
+    background-color: black;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+}
+
+h1{
+    font-size: 100px;
+    color: aquamarine;
+}
+
+span{
+    margin: 112px;
+}
+
+/* Le ponemos bottom negativo para que salga de la pantalla y no se vea */
+#carta{
+    box-shadow: 5px 10px 50px;
+    position: absolute;
+    bottom: -10000px;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    border: 2px solid gray;
+    transition: transform 0.5s ease-out;
+    transition: bottom 1s ease-out;
+}
+
+/* Le ponemos bottom 0 para que suba y una transicion para que haga el efecto de que suba */
+#carta.subirCarta{
+    bottom: 0px;
+    transition: bottom 1s ease-out;
+}
+
+/* Por defecto la cara frontal se vera asi que le ponemos 0 de rotacion */
+.frontal{
+    background-image: url('./img/Zeus.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(0deg);
+}
+
+/* Le ponemos -180 para que no se vea al principio pero luego cuando se añada la clase volteada cambiara a 0 */
+#carta .trasera{
+    transform: rotateY(-180deg);
+}
+
+/* Le ponemos 180 para que no se vea  */
+#carta.volteada .frontal {
+    transform: rotateY(180deg);
+}
+  
+/* Ponemos que ahora tiene de rotacion 0 para que se vea  */
+#carta.volteada .trasera {
+    transform: rotateY(0deg);
+}
+
+#carta .frontal, #carta .trasera {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.5s;
+}
+
+
+.animacion {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: cambioImagenes 1.5s infinite;
+}
+  
+/* Animacion para que pase de una imagen a otra*/
+@keyframes cambioImagenes {
+    0% {
+      background-image: url('./img/Cat_1.PNG');
+    }
+    17% {
+      background-image: url('./img/Cat_2.PNG');
+    }
+    34%{
+      background-image: url('./img/Cat_3.PNG');
+    }
+    51% {
+        background-image: url('./img/Cat_4.PNG');
+    }
+    68% {
+        background-image: url('./img/Cat_5.PNG');
+    }
+    100% {
+        background-image: url('./img/Cat_6.PNG');
+    }
+}
+
+.icono {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-image: url('icono.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.icono i{
+    font-size: 4em;
+    color: white;
+}

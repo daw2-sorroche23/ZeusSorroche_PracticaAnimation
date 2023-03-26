@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions and Animations</title>
+    <link rel="stylesheet" href="./src/style.css">
+    <script src="https://kit.fontawesome.com/c71759f745.js" crossorigin="anonymous"></script>
+</head>
+<body style="overflow-y:hidden">
+    <header>
+        <!-- Mostramos un titulo para que identifiquiemos que hay que hacer click en el header para mostrar la carta  -->
+        <h1>Mostrar Carta</h1>
+        <!-- La class carta nos mostrara la carta con todo el contenido que contiene -->
+        <div id="carta">
+            <!-- La clase frontal nos muestra la carta como se veria por la parte de delante  -->
+            <div class="frontal">
+            </div>
+            <!-- La clase trasera lo que hara sera mostrarnos la carta como se ve por detras a la hora de darle click -->
+            <div class="trasera">
+                <div class="animacion">
+                    <span class="padding">Zeus</span>
+                    <span class="icono"><i class="fa-solid fa-arrow-down"></i></span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script src="./src/index.js"></script>
+</body>
+</html>
